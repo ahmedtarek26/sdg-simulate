@@ -1,2 +1,2 @@
 
-## Codezilla Blog
+## Simple laravel app
