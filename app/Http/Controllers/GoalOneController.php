@@ -102,6 +102,12 @@ class GoalOneController extends Controller
 
     public function update($postId)
     {
+        
+        request()->validate([
+            'year' => ['required', 'min:4'],
+            'group' => ['required'],
+        ]);
+        
         //1- get the user data
 
         $year = request()->year;
@@ -195,6 +201,15 @@ class GoalOneController extends Controller
 
     public function update_meta($postId_meta)
     {
+        // validate data
+        request()->validate([
+            'indicator' => ['required', 'min:4'],
+            'target' => ['required', 'min:4'],
+            'goal' => ['required', 'min:4'],
+            'contact_persons' => ['required', 'min:4']
+        ]);
+        
+        
         //1- get the user data
 
         $indicator = request()->indicator;

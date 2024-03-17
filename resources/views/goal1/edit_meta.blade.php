@@ -4,6 +4,16 @@
 
 @section('content')
 
+    @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
     <form method="POST" action="{{ route('goal1.update_meta', $post_meta->id) }}">
         @csrf
         @method('PUT')
